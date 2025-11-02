@@ -10,7 +10,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background-image: url('images/image6.jpg');
+  background-image: url('images/image8.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,34 +19,33 @@ body {
   position: relative;
   overflow: hidden;
 
-  /* ✅ center the content box */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Softer red overlay */
+/* Dark overlay */
 body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(139, 0, 0, 0.35);
+  background: rgba(120, 0, 0, 0.45);
   z-index: 0;
 }
 
-/* Glass-style content box */
+/* Glass box */
 .content {
   position: relative;
   z-index: 1;
   width: 85%;
   max-width: 1000px;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 14px;
   padding: 40px;
   text-align: left;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -69,13 +68,14 @@ body::before {
   justify-content: space-between;
 }
 
+/* Text & Map sections */
 .text-section,
 .map-section {
   flex: 1;
   min-width: 300px;
 }
 
-/* List styling */
+/* List style */
 .content ul {
   list-style-type: square;
   margin-left: 25px;
@@ -91,10 +91,14 @@ body::before {
 
 .content li::marker {
   color: #ffd6d6;
-  font-size: 1.9rem;
+  font-size: 1.3rem;
 }
 
-/* Map section styling */
+/* Map section */
+.map-section {
+  position: relative;
+}
+
 .map-section h2 {
   font-size: 1.2rem;
   color: #ffeaea;
@@ -103,12 +107,51 @@ body::before {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-iframe {
+/* ✅ Image container for overlay map */
+.image-container {
+  position: relative;
   width: 100%;
   height: 300px;
-  border: 0;
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ✅ Mini Google Map overlay */
+.corner-map {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 200px;
+  height: 140px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  opacity: 0.9;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.corner-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 10px;
+}
+
+.corner-map:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
 /* Navigation buttons */
@@ -133,7 +176,7 @@ iframe {
   transform: translateY(-2px);
 }
 
-/* Responsive layout for smaller screens */
+/* Responsive */
 @media (max-width: 768px) {
   body {
     align-items: flex-start;
@@ -144,7 +187,7 @@ iframe {
     flex-direction: column;
   }
 
-  iframe {
+  .map-section img {
     height: 250px;
   }
 }
