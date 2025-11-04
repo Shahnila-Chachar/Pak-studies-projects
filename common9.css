@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+   background-image: url('images/image18.jpg'); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #fff;
+}
+
+
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, #600000, #a30000);
+  z-index: 10;
+  animation: sway 6s ease-in-out infinite alternate;
+  transform-origin: center;
+  box-shadow: inset -8px 0 40px rgba(0, 0, 0, 0.4);
+}
+
+
+.curtain.left {
+  left: 0;
+  transform: translateX(0);
+}
+
+.curtain.right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.curtain.left.open {
+  animation: openLeft 2.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+.curtain.right.open {
+  animation: openRight 2.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+
+@keyframes openLeft {
+  0% { transform: translateX(0); }
+  80% { transform: translateX(-100%); }
+  100% { transform: translateX(-100%) rotateY(1deg); }
+}
+@keyframes openRight {
+  0% { transform: translateX(0); }
+  80% { transform: translateX(100%); }
+  100% { transform: translateX(100%) rotateY(-1deg); }
+}
+
+@keyframes sway {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
+}
+
+/* === CONTENT === */
+.content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+.thank-text {
+  font-size: 4rem;
+  letter-spacing: 3px;
+  color: #ffdcdc;
+  text-shadow: 0 0 20px rgba(255, 150, 150, 0.8);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1.5s ease;
+}
+
+.sub-text {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #ffbdbd;
+  opacity: 0;
+  transition: opacity 1.5s ease 0.5s;
+}
+
+.thank-text.show {
+  opacity: 1;
+  transform: scale(1);
+  animation: glow 4s ease-in-out infinite alternate;
+}
+.sub-text.show {
+  opacity: 1;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #ffb3b3, 0 0 20px #a30000; }
+  100% { text-shadow: 0 0 25px #ffcccc, 0 0 45px #ff4d4d; }
+}

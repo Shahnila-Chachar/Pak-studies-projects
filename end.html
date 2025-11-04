@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Thank You</title>
+  <link rel="stylesheet" href="common9.css" />
+</head>
+<body>
+  <div class="curtain left"></div>
+  <div class="curtain right"></div>
+
+  <div class="content">
+    <h1 class="thank-text">Thank You</h1>
+    <p class="sub-text">for watching the presentation</p>
+  </div>
+
+  <script>
+    // Wait 2.5 seconds before opening curtains
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.querySelector(".left").classList.add("open");
+        document.querySelector(".right").classList.add("open");
+        document.querySelector(".thank-text").classList.add("show");
+        document.querySelector(".sub-text").classList.add("show");
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
