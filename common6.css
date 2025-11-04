@@ -191,3 +191,84 @@ body::before {
     height: 250px;
   }
 }
+
+/* Menu icon */
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  font-size: 28px;
+  color: white;
+  background-color: #8b0000;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 2001;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -270px;
+  width: 250px;
+  height: 100%;
+  background-color: #8b0000;
+  color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
+  padding: 25px;
+  transition: left 0.4s ease;
+  z-index: 2000;
+  overflow-y: auto;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar h3 {
+  color: white;
+  font-size: 1.4rem;
+  border-bottom: 2px solid white;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  padding-top: 60px;
+}
+
+.sidebar ol {
+  list-style: decimal;
+  padding-left: 20px;
+}
+
+.sidebar ol li {
+  margin: 10px 0;
+  position: relative;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #ffdbdb;
+}
+
+/* Submenu on hover */
+.submenu {
+  display: none;
+  list-style-type: disc;
+  padding-left: 25px;
+  margin-top: 5px;
+}
+
+.has-sub:hover .submenu {
+  display: block;
+}
