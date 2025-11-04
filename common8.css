@@ -1,0 +1,132 @@
+/* ===== COMMON 8: CONCLUSION PAGE (FINAL MAROON THEME) ===== */
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Background Setup */
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url('images/image17.jpg'); /* keep same bg for uniform theme */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Maroon Overlay */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(128, 0, 0, 0.45); /* rich maroon tint */
+  z-index: 0;
+}
+
+/* Glass Box */
+.content {
+  position: relative;
+  z-index: 1;
+  width: 85%;
+  max-width: 950px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 45px 55px;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  color: #a30000;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(255, 214, 214, 0.4);
+  display: inline-block;
+  padding-bottom: 6px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Paragraph / Content */
+.text-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 20px 0;
+  color: #f5f5f5;
+}
+
+.text-box b {
+  color: #a30000;
+  font-weight: 600;
+}
+
+/* Final Line */
+.final-line {
+  margin-top: 35px;
+  font-style: italic;
+  color: #fff;
+  font-weight: 500;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Buttons */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px;
+}
+
+.nav a {
+  background-color: #a30000;
+  color: white;
+  padding: 10px 26px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.nav a:hover {
+  background-color: white;
+  color: #a30000;
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding-top: 50px;
+  }
+
+  .content {
+    padding: 30px 25px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .text-box p {
+    font-size: 1rem;
+  }
+}

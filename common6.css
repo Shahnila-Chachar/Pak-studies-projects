@@ -1,0 +1,193 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Background image */
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url('images/image15.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dark overlay */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(120, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Glass box */
+.content {
+  position: relative;
+  z-index: 1;
+  width: 85%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 40px;
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Title */
+.content h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Two-column layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+/* Text & Map sections */
+.text-section,
+.map-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* List style */
+.content ul {
+  list-style-type: square;
+  margin-left: 25px;
+  padding-left: 15px;
+}
+
+.content li {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #f5f5f5;
+  margin-bottom: 8px;
+}
+
+.content li::marker {
+  color: #ffd6d6;
+  font-size: 1.3rem;
+}
+
+/* Map section */
+.map-section {
+  position: relative;
+}
+
+.map-section h2 {
+  font-size: 1.2rem;
+  color: #ffeaea;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ✅ Image container for overlay map */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ✅ Mini Google Map overlay */
+.corner-map {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 200px;
+  height: 140px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  opacity: 0.9;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.corner-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 10px;
+}
+
+.corner-map:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Navigation buttons */
+.nav {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav a {
+  background-color: #a30000;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: white;
+  color: #a30000;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .map-section img {
+    height: 250px;
+  }
+}
