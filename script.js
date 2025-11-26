@@ -19,22 +19,22 @@ function toggleMenu() {
 function slideToPage(event, page) {
   event.preventDefault();
 
-  // Remove any existing transition divs
+
   const oldTransition = document.querySelector(".page-transition");
   if (oldTransition) oldTransition.remove();
 
-  // Create the transition layer
+ 
   const transition = document.createElement("div");
   transition.classList.add("page-transition");
   document.body.appendChild(transition);
 
-  // Start animation (slide in from right)
+ 
   requestAnimationFrame(() => {
     transition.style.left = "0";
   });
 
-  // After animation completes, redirect
+
   setTimeout(() => {
     window.location.href = page;
-  }, 700);
+  }, 400);
 }
